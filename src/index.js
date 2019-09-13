@@ -55,7 +55,11 @@ app.put('/remove_favorite/:id', async (req, res) => {
 
 // start the in-memory MongoDB instance
 startDatabase().then(async () => {
+  //fill the database 
   await insertMovie({title: 'Star Wars', favorite: false});
+  await insertMovie({title: 'Inception', favorite: false});
+  await insertMovie({title: 'Singing in the Rain', favorite: false});
+  await insertMovie({title: 'Titanic', favorite: false});
 
   // start the server
   app.listen(3001, async () => {
